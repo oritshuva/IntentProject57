@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "106512132177",
+    "project_id": "intentapp-b7a1b",
+    "storage_bucket": "intentapp-b7a1b.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:106512132177:android:2c327a0b4be1a90d3a7070",
+        "android_client_info": {
+          "package_name": "com.example.intentapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "106512132177-588qh13o7sajne69l9m774b69cno2hoh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQLUIg7rBDn7aFYtQdmWiXYPGzLKcQaH8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "106512132177-588qh13o7sajne69l9m774b69cno2hoh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:106512132177:android:698f5a6c232e81823a7070",
+        "android_client_info": {
+          "package_name": "com.example.mysimplenew57calc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "106512132177-588qh13o7sajne69l9m774b69cno2hoh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQLUIg7rBDn7aFYtQdmWiXYPGzLKcQaH8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "106512132177-588qh13o7sajne69l9m774b69cno2hoh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

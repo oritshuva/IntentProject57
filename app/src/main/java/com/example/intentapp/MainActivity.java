@@ -4,14 +4,30 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContract;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.google.android.material.imageview.ShapeableImageView;
+import com.google.firebase.Firebase;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.GoogleAuthCredential;
+
 public class MainActivity extends AppCompatActivity {
+    FirebaseAuth auth;
+    GoogleSignInClient googleSignInClient;
+    ShapeableImageView imageView;
+    TextView name, email;
+    private final ActivityResultLauncher<Intent> activityResultLauncher = registerForActivityResult(new ActivityResultContract.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() { {
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
