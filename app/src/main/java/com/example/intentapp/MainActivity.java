@@ -38,6 +38,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.GoogleAuthCredential;
 import com.google.firebase.auth.GoogleAuthProvider;
 
+import java.util.Objects;
+
 public class MainActivity extends AppCompatActivity {
     FirebaseAuth auth;
     GoogleSignInClient googleSignInClient;
@@ -50,13 +52,13 @@ public class MainActivity extends AppCompatActivity {
                 Task<GoogleSignInAccount> accountTask = GoogleSignIn.getSignedInAccountFromIntent(result.getData());
                 try{
                     GoogleSignInAccount signInAccount = accountTask.getResult(ApiException.class);
-                    AuthCredential authCredential = GoogleAuthProvider.getCredential(GoogleSignInAccount.getIdToken(),null);
+                    AuthCredential authCredential = GoogleAuthProvider.getCredential(signInAccount.getIdToken(),null);
                     auth.signInWithCredential(authCredential).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if(task.isSuccessful()){
                              auth = FirebaseAuth.getInstance();
-                             Glide.with(MainActivity.this).load(auth.getCurrentUser().getPhotoUrl().into(imageView));
+                             Glide.with(MainActivity.this).load(Objects.requireNonNull(auth.getCurrentUser()).getPhotoUrl()).into(imageView);
                              name.setText(auth.getCurrentUser().getDisplayName());
                              email.setText(auth.getCurrentUser().getEmail());
                                 Toast.makeText(MainActivity.this, "Sign in Successfuly", Toast.LENGTH_SHORT).show();
@@ -97,7 +99,8 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this, ShareActivity.class);
             startActivity(intent);
         });
-        FirebaseApp.getInstance(this);
+
+        FirebaseApp.initializeApp(this);
         imageView = findViewById(R.id.profileImageView);
         name = findViewById(R.id.nameTv);
         email = findViewById(R.id.emailTv);
